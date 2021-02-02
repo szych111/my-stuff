@@ -1,0 +1,94 @@
+body {
+    color: #15114e;
+    font-family: bebas-neue, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+hr {
+    border-top: 2px solid #d8cb3d;
+    width: 50vw;
+}
+
+.container {
+    width: 60vw;
+    display: flex;
+    margin: auto
+}
+
+.left {
+    flex: 7;
+}
+
+.right {
+    flex: 1;
+    align-items: center;
+    align-content: center;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.2;
+}
+
+.trainings-list, .projects-list, .info {
+    font-family: bebas-neue-pro, sans-serif;;
+}
+
+a {
+    color: #15114e;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.7;
+    transform: scale(1.5)
+}
+
+.want-to-be p {
+    opacity: 0.6;
+}
+
+.footer {
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.portfolio-modal {
+    background-color: goldenrod;
+    opacity: 1;
+    position: fixed;
+    z-index: 10;
+    top: 20em;
+    bottom: 20em;
+    right: 2em;
+    left: 2em;
+    box-shadow: 0 0 0 5em rgba(0, 0, 255, 0.5);
+    display: none;
+}
+
+.modal-close {
+    font-size: 20px;
+    background: transparent;
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px black;
+    cursor: pointer;
+}
+
+.portfolio-subtitle::after {
+    content: '';
+    display: block;
+    background: #15114e;
+    height: 1px;
+    margin: 1em;
+}
+
