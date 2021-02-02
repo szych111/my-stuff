@@ -1,28 +1,38 @@
 body {
     color: #15114e;
     font-family: bebas-neue, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     text-align: center;
 }
 
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: .5em;
+}
+
 hr {
     border-top: 2px solid #d8cb3d;
-    width: 50vw;
+    max-width: 35vw;
 }
 
 .container {
-    width: 60vw;
+    width: 50vw;
     display: flex;
     margin: auto
 }
 
 .left {
-    flex: 7;
+    flex: 6;
 }
 
 .right {
     flex: 1;
+    display: flex;
     align-items: center;
     align-content: center;
 }
@@ -31,10 +41,11 @@ ul {
     list-style: none;
     padding-left: 0;
     line-height: 1.2;
+    margin-top: 0.5em;
 }
 
 .trainings-list, .projects-list, .info {
-    font-family: bebas-neue-pro, sans-serif;;
+    font-family: bebas-neue-pro, sans-serif;
 }
 
 a {
@@ -53,11 +64,33 @@ a:hover {
     opacity: 0.6;
 }
 
+/* footer */
+
 .footer {
+    width: 40vw;
     display: flex;
     margin: auto;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
+
+.info, .social-media, .lang {
+    flex: 1;
+}
+
+.social-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.social-media img {
+    display: block;
+    margin: 1em .8em;
+}
+
+
+
+/* modal */
 
 .portfolio-modal {
     background-color: goldenrod;
@@ -92,3 +125,10 @@ a:hover {
     margin: 1em;
 }
 
+.small-case {
+    font-family: bebas-neue-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem;
+
+}
