@@ -8,7 +8,7 @@ body {
 
 .super-container {
     width: 700px;
-    max-width: 100;
+    max-width: 100%;
     margin: auto;
 }
 
