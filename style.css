@@ -13,20 +13,20 @@ body {
 }
 
 .main-title{
-    font-size: 4vmin;
+    font-size: 4vh;
 }
 .section-title {
-    font-size: 3vmin;
+    font-size: 3vh;
 }
 
 .subtitle {
-    font-size: 2.2vmin;
+    font-size: 2.2vh;
     margin-bottom: .5em;
 }
 
 hr {
     border-top: 2px solid #d8cb3d;
-    max-width: 100%;
+    max-width: 95%;
 }
 
 .container {
