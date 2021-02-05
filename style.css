@@ -8,7 +8,7 @@ body {
 
 .super-container {
     max-width: 100%;
-    width: 700px;
+    width: 670px;
     margin: auto;
 }
 
@@ -112,7 +112,6 @@ a:hover {
         margin: 1em;
     }
 }
-
 
 .social-med-icon {
     padding: .5em;
