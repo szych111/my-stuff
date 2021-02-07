@@ -8,7 +8,7 @@ body {
 
 .super-container {
     max-width: 100%;
-    width: 670px;
+    width: 700px;
     margin: auto;
 }
 
@@ -19,7 +19,8 @@ body {
 
 .want-to-be p {
     opacity: 0.6;
-    margin: 0 0 2em;
+    margin: 0 0 1em;
+    font-size: 3.2vmin;
 }
 
 .section-title {
@@ -28,13 +29,29 @@ body {
 
 .subtitle {
     font-size: 2.4vh;
-    margin: 0 .5em 0;
+    margin: 0.5em 0;
+}
+
+.subtitle:not(.lang) {
+    background-color: rgba(216, 203, 61, 0.8);
+    display: inline;
+    padding: 0 .5em;
+}
+
+h3.lang::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background-color: #d8cb3d;
+    width: 75%;
+    height: 3px;
 }
 
 hr {
     border-top: 2px solid #d8cb3d;
     max-width: 100%;
     padding: 0 2vw;
+    margin-bottom: 1em;
 }
 
 .container {
@@ -52,7 +69,7 @@ hr {
     padding: 0 2em;
     display: flex;
     align-items: center;
-    align-content: center;
+    justify-content: center;
 }
 
 ul {
@@ -60,6 +77,36 @@ ul {
     padding-left: 0;
     line-height: 1.2;
     margin-top: 0.5em;
+}
+
+li:hover {
+    color: #d8cb3d;
+}
+
+li[data-tool-tip] {
+    position: relative;
+}
+
+li[data-tool-tip]::after {
+    position: absolute;
+    color: #15114e;
+    content: attr(data-tool-tip);
+    display: block;
+    background-color: rgba(216, 203, 61, 1);
+    padding: 1em;
+    border-radius: 5px;
+    bottom: 0;
+    right: 0;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: 
+        transform ease-out 150ms,
+        bottom ease-out 150ms;
+}
+
+li[data-tool-tip]:hover::after {
+    transform: scale(1);
+    bottom: 100%;
 }
 
 .trainings-list, .projects-list, .info {
@@ -79,14 +126,6 @@ a:hover {
     transform: scale(1.5)
 }
 
-.portfolio-subtitle::after {
-    content: '';
-    display: block;
-    background: #15114e;
-    height: 1px;
-    margin: 1em;
-}
-
 .small-case {
     font-family: 'Bebas-Neue-Pro', sans-serif;
     font-weight: 400;
@@ -96,7 +135,7 @@ a:hover {
 /* footer */
 
 .lang {
-    margin: 0.5em;
+    margin: 0.5;
 }
 
 @media (min-width: 600px) {
@@ -112,6 +151,7 @@ a:hover {
         margin: 1em;
     }
 }
+
 
 .social-med-icon {
     padding: .5em;
