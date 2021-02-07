@@ -87,8 +87,9 @@ ul {
     margin-top: 0.5em;
 }
 
-li:hover {
+li[data-tool-tip]:hover {
     color: #d8cb3d;
+    cursor: pointer;
 }
 
 li[data-tool-tip] {
@@ -122,7 +123,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.projects-list:hover, .projects-list:focus {
     color: #d8cb3d;
 }
 
@@ -165,7 +166,7 @@ h3.lang::after {
 
 
 .social-med-icon {
-    padding: .3em;
+    padding: .5em;
     width: calc(.8rem + 1.2vmin);
 }
 
