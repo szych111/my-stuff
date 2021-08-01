@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* colors */
+
+:root {
+  --base-blue: #63c3c0;
+  --base-navy: #14006A;
+  --base-dark-pink: #D4145A;
+  --base-orange: #ff3a0a;
+  --base-yellow: #f7931e;
+  --base-pink: #fac7ba;
+  --base-green: #c99900;
+}
+
+/* project specific styles */
+
+body {
+  color: rgb(46, 45, 45);
+  font-family: 'Playfair Display', serif;
+  font-size: 1em;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato', sans-serif;
+  color: #63c3c0;
+  margin-bottom: 1em;
+}
+
+.container {
+  margin: 2vmax;
+  padding: 5vmin;
+  background-color: rgba(#c99900, 0.05);
+}
+
+.header, .content, .footer {
+    margin: 0 auto 2vmax;
+}
+
+.header, .footer {
+    text-align: center;
+}
+
+.change-span {
+  cursor: pointer;
+  color: var(--base-navy);
+}
+
+/* content */ 
+
+@media (min-width: 700px) {
+    .content {
+        columns: 3;
+    }
+}
