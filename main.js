@@ -1,27 +1,36 @@
 const langSpan = document.querySelector('.lang-span');
-const langArray = ['', 'PHP', 'JavaScript', 'CSS'];
+const langArray = ['PHP', 'JavaScript', 'CSS'];
 const postSpan = document.querySelector('.post-span');
-const postArray = ['', 'Web Designer', 'Frontend Developer'];
+const postArray = ['Web Designer', 'Frontend Developer'];
 const passtimeSpan = document.querySelector('.passtime-span');
-const passtimeArray = ['', 'black&white photograpy', 'strawberries', 'flip-flops', 'strong tea'];
-let counter = 1;
+const passtimeArray = ['black&white photograpy', 'strawberries', 'flip-flops', 'strong tea'];
+const futureSpan = document.querySelector('.future-span');
+const futureArray = ['programming-guru', 'triathlonist', 'piano player', 'gardener'];
 
-// langSpan.innerText = langArray[counter];
+let counter = 0;
 
-function spanChanger (span, array) {
-    span.innerText = array[counter];
+window.addEventListener('DOMContentLoaded', () => {
+    langSpan.textContent = langArray[counter];
+    postSpan.textContent = postArray[counter];
+    passtimeSpan.textContent = passtimeArray[counter];
+    futureSpan.textContent = futureArray[counter];
+
+  })
+
+function spanChanger(span, array) {
     span.addEventListener('click', () => {
-        counter += 1;
-        span.innerText = array[counter];
-        if (counter === array.length-1) {
+        counter++;
+        if (counter > array.length - 1) {
             counter = 0;
         }
+        span.textContent = array[counter]
     })
 }
 
 spanChanger(langSpan, langArray);
 spanChanger(postSpan, postArray);
-spanChanger(passtimeSpan, passtimeArray)
+spanChanger(passtimeSpan, passtimeArray);
+spanChanger(futureSpan, futureArray)
 
 ///--- slider ---///
 

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
 .carousel {
   position: relative;
-  height: 600px;
+  height: auto;
   width: 80%;
   max-width: 800px;
   margin-inline: auto;
@@ -162,6 +162,7 @@ hr {
   border: 0;
   border-top: 5px dashed var(--base-blue);
   width: 60vw;
+  max-width: 600px;
 }
 
 /* content */
