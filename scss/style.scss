@@ -65,7 +65,7 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  font-size: calc(var(--fontsize)*1.6);
+  font-size: calc(var(--fontsize)*1.3);
   margin-bottom: 0.5em;
 }
 
@@ -126,35 +126,19 @@ hr {
 }
 
 /* text */
- .quote {
+
+ .quote-mark {
    font-size: 1.2em;
    font-family: 'Hahmlet';
    color: var(--green);
  }
 
-/* slider */ 
-
-.slider__item {
-  
-  
-  .figcaption {
-    font-size: calc(var(--fontsize)*0.8);
-  }
-}
-
 /* projects */
 
-ul {
-  margin: 0 20%;
+.projects-container {
   text-align: left;
-
-  li {
-    margin-bottom: 0.5vh;
-
-    &::marker {
-      color: var(--accent);
-    }
-  }
+  margin: 0 auto;
+  background-color: darkcyan;
 
   a {
     color: var(--green);
@@ -164,17 +148,32 @@ ul {
 
 /* footer */
 
-.footer {
-  display: flex;
-  justify-content: center;
+footer {
   background-color: rgba(#D9D1C7, 1);
+  padding-top: 10px;
 }
 
-.footer__contact-icon {
-  width: 8vw;
-  max-width: 50px;
-  margin: 1.5vmax 2vmax;
+.contact-links {
+  display: flex;
+  justify-content: center;
 }
+
+.contact-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  border-radius: 5px;
+  width: 8vw;
+  max-width: 60px;
+  margin: 1.5vmax 2vmax;
+  padding: 1vmin;
+}
+
+.footer img {
+    object-fit: cover;
+    margin-left: -1px;
+  }
 
 /* end footer */
 
@@ -184,7 +183,13 @@ ul {
   }
 
   .content {
-    columns: 3;
+    display: flex;
+
+    & > * {
+      flex-basis: 100%;
+      background-color: yellow;
+      margin: 2vw;
+    }
 }
 }
 

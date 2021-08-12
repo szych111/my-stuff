@@ -17,13 +17,15 @@
         <header class="header">
             <h1 class="main-title">Alexandra TASSOTTI</h1>
             <p class="intro">
-                I am a <span class="special-char">{</span> <span class="post-span change-span"></span> <span class="special-char">}</span>. Creative in an orderly manner. <span class="special-char">{</span> <span class="lang-span change-span"></span> <span class="special-char">}</span> and <span class="special-char">{</span> <span class="passtime-span change-span"></span> <span class="special-char">}</span> lover. Future <span class="special-char">{</span> <span class="future-span change-span"><programming-guru></programming-guru></span> <span class="special-char">}</span>.
+                I am a <span class="special-char">{</span> <span class="post-span change-span"></span> <span class="special-char">}</span>. Creative in an orderly manner. A <span class="special-char">{</span> <span class="lang-span change-span"></span> <span class="special-char">}</span> and <span class="special-char">{</span> <span class="passtime-span change-span"></span> <span class="special-char">}</span> lover. Future <span class="special-char">{</span> <span class="future-span change-span"><programming-guru></programming-guru></span> <span class="special-char">}</span>.
             </p>
             <hr>
         </header>
         <div class="content">
             <div class="content__text">
-                <span class="quote">"</span>where your focus goes, there your energy flows
+                <p class="quote">
+                    <span class="quote-mark">"</span>where your focus goes, there your energy flows
+                </p>
             </div>
             <div class="carousel">
                 <button class="carousel__btn carousel__btn--left is-hidden">&#10094;</button>
@@ -32,47 +34,55 @@
                         <div class="carousel__slide current-slide">
                             <img src="./img/website-slider-material/avedon-vogue-italia-sqr.jpg" alt="photo of a flat" class="demo">
                         </div>
-                        <div class="carousel__slide">
+                        <!-- <div class="carousel__slide">
                             <img src="./img/website-slider-material/cary-grant-umbrella-sqr.jpg" alt="photo of a flat" class="demo">
                         </div>
                         <div class="carousel__slide">
                             <img src="./img/website-slider-material/henri-cartier-bresson-sqr.jpg" alt="photo of a flat" class="demo">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <button class="carousel__btn carousel__btn--right">&#10095;</button>
             </div>
             <div class="content__projects">
                 <h2>Projects</h2>
-                <ul class="projects-list">
-                    <li>
-                        <a href="http://mondestate.pl" class="projects__link" target="blank">mondestate</a>
-                    <li>
-                        <a href="https://szych111.github.io/krakowiak-four-colours/" class="projects__link" target="blank">krakowiak</a>
-                    </li>
-                    <li>
-                        <a href="http://inter-active-croatians.org" class="projects__link" target="blank">magic ball</a>
-                    </li>
-                    </li>
-                </ul>
+                <div class="projects-container">
+                    <a href="http://mondestate.pl" class="projects__link" target="blank">mondestate</a>
+                    <a href="https://szych111.github.io/krakowiak-four-colours/" class="projects__link" target="blank">krakowiak</a>
+                    <a href="http://inter-active-croatians.org" class="projects__link" target="blank">magic ball</a>
+                </div>
             </div>
         </div>
         <footer class="footer">
-            <a href="https://wa.me/+4915771338639" class="footer__contact-link" target="blank">
-                <img src="img/mail.png" alt="linkedin icon" class="footer__contact-icon">
-            </a>
-            <a href="https://github.com/szych111" class="footer__contact-link" target="blank">
-                <img src="img/github.png" alt="github icon" class="footer__contact-icon">
-            </a>
-            <a href="https://www.linkedin.com/in/aleksandra-szychlinska-167895164/" class="footer__contact-link" target="blank">
-                <img src="img/linkedin.png" alt="linkedin icon" class="footer__contact-icon">
-            </a>
-            <mail class="footer__contact-link">
-                <img src="img/whatsapp.png" alt="linkedin icon" class="footer__contact-icon">
-            </mail>
-            <a href="https://wa.me/+4915771338639" class="footer__contact-link" target="blank">
-                <img src="img/phone.png" alt="linkedin icon" class="footer__contact-icon">
-            </a>
+            <hr>
+            <div class="contact-links">
+                <div class="contact-link-container">
+                    <a href="mailto:szychlinska@gmail.com" class="footer__contact-link">
+                        <img src="img/mail.png" alt="linkedin icon" class="footer__contact-icon">  
+                    </a>
+                </div>
+                <div class="contact-link-container">
+                    <a href="https://github.com/szych111" class="footer__contact-link" target="blank">
+                        <img src="img/github.png" alt="github icon" class="footer__contact-icon">
+                    </a>
+                </div>
+                <div class="contact-link-container">
+                    <a href="https://www.linkedin.com/in/aleksandra-szychlinska-167895164/" class="footer__contact-link" target="blank">
+                        <img src="img/linkedin.png" alt="linkedin icon" class="footer__contact-icon">
+                    </a>
+                </div>
+                <div class="contact-link-container">
+                    <a href="https://wa.me/+4915771338639" class="footer__contact-link" target="blank">
+                        <img src="img/whatsapp.png" alt="linkedin icon" class="footer__contact-icon">  
+                    </a>
+                </div>
+                <div class="contact-link-container">
+                    <a href="tel:+4915771338639" class="footer__contact-link" target="blank">
+                        <img src="img/phone.png" alt="linkedin icon" class="footer__contact-icon">
+                    </a>
+                </div>
+            </div>
+
         </footer>
     </main>
 </body>
