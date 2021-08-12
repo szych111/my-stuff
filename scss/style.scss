@@ -18,7 +18,6 @@ p {
 
 body {
   line-height: 1.5;
-  color: var(--base-dark);
 }
 
 img,
@@ -37,34 +36,36 @@ select {
 /* colors */
 
 :root {
-  --base-green: #012619;
-  --base-dark: #730202;
-  --base-orange: #A60303;
-  --base-light: #D9D1C7;
-  --base-accent: #ffda08;
-  --base-fontsize: 1.5em;
+  --green: #012619;
+  --dark: #730202;
+  --red: #A60303;
+  --light: #D9D1C7;
+  //--accent: #B33F07;
+  --accent: #DA7600;
+  --fontsize: 14px;
 }
 
 /* project specific styles */
 
 body {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
+  font-size: var(--fontsize);
+  color: var(--dark);
 }
 
 h1, h2, h3 {
   font-family: 'Lato', sans-serif;
-  color: var(--base-green);
+  color: var(--green);
 }
 
 h1 {
-  font-size: calc(1.5em*1.3);
+  font-size: calc(var(--fontsize)*1.4);
   margin-bottom: 1em;
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: calc(var(--fontsize)*1.6);
   margin-bottom: 0.5em;
 }
 
@@ -92,22 +93,22 @@ h2 {
 
 .intro {
   max-width: 800px;
-  font-size: 1.2em;
   margin: 0 auto 2.5vmax;
 }
 
 .change-span {
   cursor: pointer;
-  color: var(--base-green);
+  color: var(--green);
 }
 
 .special-char {
-  color: var(--base-accent);
+  color: var(--accent);
+  padding: 0 0.4em;
 }
 
 hr {
   border: 0;
-  border-top: 5px dashed var(--base-orange);
+  border-top: 5px dashed var(--red);
   width: 60vw;
   max-width: 600px;
 }
@@ -128,6 +129,7 @@ hr {
  .quote {
    font-size: 1.2em;
    font-family: 'Hahmlet';
+   color: var(--green);
  }
 
 /* slider */ 
@@ -136,7 +138,7 @@ hr {
   
   
   .figcaption {
-    font-size: calc(1.5em*0.5);
+    font-size: calc(var(--fontsize)*0.8);
   }
 }
 
@@ -144,19 +146,18 @@ hr {
 
 ul {
   margin: 0 20%;
-  font-size: calc(1.5em * 0.9);
   text-align: left;
 
   li {
     margin-bottom: 0.5vh;
 
     &::marker {
-      color: var(--base-accent);
+      color: var(--accent);
     }
   }
 
   a {
-    color: var(--base-green);
+    color: var(--green);
     text-decoration: none;
   }
 }
@@ -170,19 +171,31 @@ ul {
 }
 
 .footer__contact-icon {
-  width: 15vw;
-  max-width: 60px;
-  margin: 2vw;
+  width: 8vw;
+  max-width: 50px;
+  margin: 1.5vmax 2vmax;
 }
 
 /* end footer */
 
 @media (min-width: 600px) {
   :root {
-    --base-fontsize: 5em;
+    --fontsize: 18px;
   }
 
   .content {
     columns: 3;
 }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --fontsize: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --fontsize: 25px;
+  }
 }
