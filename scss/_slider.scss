@@ -1,9 +1,8 @@
 .carousel {
     position: relative;
-    height: 350px;
-    width: 350px;
+    height: 320px;
+    width: 320px;
     margin-inline: auto;
-    background-color: pink;
 
     img {
         width: 100%;
@@ -23,7 +22,7 @@
     margin: 0;
     list-style: none ;
     position: relative;
-    //height: 100%;
+    height: 100%;
     transition: transform 250ms ease-in;
 }
 
@@ -44,6 +43,7 @@
     background: transparent;
     border: 0;
     cursor: pointer;
+    z-index: 2;
 }
 
 .carousel__btn--left {
@@ -58,9 +58,16 @@
     display: none;
 }
 
-@media (min-width: 900px) {
+// @media (min-width: 900px) {
+//     .carousel {
+//         width: auto;
+//         height: auto;
+//     }
+//     }
+
+@media (min-width: 1200px) {
     .carousel {
-        height: 350px;
-        
+        width: 500px;
+        height: 500px;
     }
     }

@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
 .carousel {
   position: relative;
-  height: 350px;
-  width: 350px;
+  height: 320px;
+  width: 320px;
   margin-inline: auto;
-  background-color: pink;
 }
 
 .carousel img {
@@ -24,6 +23,7 @@
   margin: 0;
   list-style: none;
   position: relative;
+  height: 100%;
   transition: transform 250ms ease-in;
 }
 
@@ -44,6 +44,7 @@
   background: transparent;
   border: 0;
   cursor: pointer;
+  z-index: 2;
 }
 
 .carousel__btn--left {
@@ -58,10 +59,24 @@
   display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .carousel {
-    height: 350px;
+    width: 500px;
+    height: 500px;
   }
+}
+
+/* projects */
+.projects-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.projects-container a {
+  color: var(--dark);
+  text-decoration: none;
+  display: block;
+  position: relative;
 }
 
 *,
@@ -102,14 +117,18 @@ select {
   --dark: #730202;
   --red: #A60303;
   --light: #D9D1C7;
-  --accent: #DA7600;
-  --fontsize: 14px;
+  --navy: #032340;
+  --blue: #5B89A6;
+  --accent: #F20505;
+  --dark-brown: #590202;
+  --brown: #8C0303;
+  --font-size: 14px;
 }
 
 /* project specific styles */
 body {
   font-family: 'Playfair Display', serif;
-  font-size: var(--fontsize);
+  font-size: var(--font-size);
   color: var(--dark);
 }
 
@@ -118,25 +137,14 @@ h1, h2, h3 {
   color: var(--green);
 }
 
-h1 {
-  font-size: calc(var(--fontsize)*1.4);
-  margin-bottom: 1em;
-}
-
-h2 {
-  text-transform: uppercase;
-  font-size: calc(var(--fontsize)*1.3);
-  margin-bottom: 0.5em;
-}
-
 .container {
-  margin: 2vmax;
-  padding: 5vmin;
-  background-color: rgba(217, 209, 199, 0.2);
-}
-
-.header, .content, .footer {
-  margin: 0 auto 3vmax;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 1vmax 2vmax;
+  padding: 9vmax 5vmin 2vmin;
+  background-color: rgba(217, 209, 199, 0.6);
+  position: relative;
 }
 
 .header, .footer {
@@ -145,11 +153,42 @@ h2 {
 
 /* header */
 .main-title {
-  text-align: left;
+  font-size: calc(var(--font-size)*1.4);
+  margin-bottom: 1vmax;
+  position: absolute;
+  display: inline;
+  top: 0.5em;
+  left: 2em;
+}
+
+.main-title::before,
+.main-title::after {
+  content: '';
+  background-color: var(--accent);
+  height: 0.5em;
+  width: 0.5em;
+  display: block;
+  position: absolute;
+  bottom: 0.4em;
+}
+
+.main-title::before {
+  left: -1.2em;
+}
+
+.main-title::after {
+  right: -1.2em;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: calc(var(--font-size)*1.2);
+  margin-bottom: 0.5em;
 }
 
 .intro {
   max-width: 800px;
+  width: 60vw;
   margin: 0 auto 2.5vmax;
 }
 
@@ -165,39 +204,36 @@ h2 {
 
 hr {
   border: 0;
-  border-top: 5px dashed var(--red);
+  border-top: 3px dashed var(--accent);
   width: 60vw;
-  max-width: 600px;
+  max-width: 880px;
+  margin-bottom: 2vmax;
 }
 
 /* content */
+.header, .content {
+  margin-bottom: 1vw;
+}
+
 .content > * {
   margin: 0 auto 2em;
 }
 
 .content__text,
 .content__projects {
-  padding: 0 1.5em;
+  padding: 2vmin;
   text-align: center;
+}
+
+.content__text {
+  max-width: 300px;
 }
 
 /* text */
 .quote-mark {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family: 'Hahmlet';
-  color: var(--green);
-}
-
-/* projects */
-.projects-container {
-  text-align: left;
-  margin: 0 auto;
-  background-color: darkcyan;
-}
-
-.projects-container a {
-  color: var(--green);
-  text-decoration: none;
+  color: var(--accent);
 }
 
 /* footer */
@@ -217,15 +253,14 @@ footer {
   align-items: center;
   background-color: var(--dark);
   border-radius: 5px;
-  width: 8vw;
-  max-width: 60px;
-  margin: 1.5vmax 2vmax;
+  width: 7vw;
+  max-width: 50px;
+  margin: 0 2vmax 2vmax;
   padding: 1vmin;
 }
 
 .footer img {
   object-fit: cover;
-  margin-left: -1px;
 }
 
 /* end footer */
@@ -233,25 +268,23 @@ footer {
   :root {
     --fontsize: 18px;
   }
-  .content {
-    display: flex;
-  }
-  .content > * {
-    flex-basis: 100%;
-    background-color: yellow;
-    margin: 2vw;
-  }
 }
 
 @media (min-width: 900px) {
   :root {
-    --fontsize: 22px;
+    --font-size: 22px;
+  }
+  .content {
+    columns: 3;
+  }
+  hr {
+    border-top: 5px dashed var(--green);
   }
 }
 
 @media (min-width: 1200px) {
   :root {
-    --fontsize: 25px;
+    --font-size: 25px;
   }
 }
 /*# sourceMappingURL=style.css.map */
