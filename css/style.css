@@ -140,7 +140,6 @@ h1, h2, h3 {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   margin: 1vmax 2vmax;
   padding: 9vmax 5vmin 2vmin;
   background-color: rgba(217, 209, 199, 0.6);
@@ -189,7 +188,7 @@ h2 {
 .intro {
   max-width: 800px;
   width: 60vw;
-  margin: 0 auto 2.5vmax;
+  margin: 0 auto 2vmax;
 }
 
 .change-span {
@@ -207,7 +206,7 @@ hr {
   border-top: 3px dashed var(--accent);
   width: 60vw;
   max-width: 880px;
-  margin-bottom: 2vmax;
+  margin-bottom: 2vmin;
 }
 
 /* content */
@@ -285,6 +284,9 @@ footer {
 @media (min-width: 1200px) {
   :root {
     --font-size: 25px;
+  }
+  .container {
+    padding-top: 5vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
