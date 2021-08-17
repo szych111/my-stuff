@@ -3,9 +3,9 @@ const langArray = ['JavaScript', 'PHP', 'CSS'];
 const postSpan = document.querySelector('.post-span');
 const postArray = ['Frontend Developer', 'Web Designer'];
 const passtimeSpan = document.querySelector('.passtime-span');
-const passtimeArray = ['black&white photograpy', 'strawberries', 'flip-flops', 'tea with milk'];
+const passtimeArray = ['black&white photograpy', 'strawberries', 'flip-flops'];
 const futureSpan = document.querySelector('.future-span');
-const futureArray = ['programming-guru', 'triathlonist', 'piano player', 'gardener'];
+const futureArray = ['programming-guru', 'triathlonist', 'gardener'];
 
 let counter = 0;
 

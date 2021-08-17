@@ -1,13 +1,28 @@
 /* projects */
 
-.projects-container {
+.projects__title {
+    display: inline-block;
+    padding: 0 0.5em 0.3em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-size: calc(var(--font-size)*1.1);
+    color: var(--green);
+}
+
+.projects__container {
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 2vmax;
+    
   
     a {
-        color: var(--dark);
+        color: var(--accent);
         text-decoration: none;
         display: block;
-        position: relative;
+        margin-bottom: 0.5em;
+        font-weight: 500;
+    }
+
+    a:hover, a:focus {
+        color: var(--dark);
     }
   }

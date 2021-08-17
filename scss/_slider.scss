@@ -2,7 +2,7 @@
     position: relative;
     height: 320px;
     width: 320px;
-    margin-inline: auto;
+    margin-bottom: 3vh;
 
     img {
         width: 100%;
@@ -14,12 +14,12 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-    margin-bottom: 2vmax;
+    margin-bottom: 5vmax;
 }
 
 .carousel__track {
     padding: 0;
-    margin: 0;
+    //margin: 0;
     list-style: none ;
     position: relative;
     height: 100%;
@@ -47,11 +47,11 @@
 }
 
 .carousel__btn--left {
-    left: -5vw;
+    left: -3vw;
 }
 
 .carousel__btn--right {
-    right: -5vw;
+    right: -3vw;
 }
 
 .is-hidden {
