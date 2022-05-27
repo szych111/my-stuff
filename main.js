@@ -83,5 +83,3 @@ prevBtn.addEventListener('click', e => {
     moveToSlide(track, currentSlide, prevSlide)
     hideShowArrows(slides, prevBtn, nextBtn, prevIndex)
 })
-
-

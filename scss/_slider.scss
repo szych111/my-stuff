@@ -1,7 +1,8 @@
 .carousel {
     position: relative;
-    height: 320px;
-    width: 320px;
+    height: 310px;
+    width: 310px;
+    max-width: 100vw;
     margin-bottom: 3vh;
 
     img {
@@ -47,27 +48,14 @@
 }
 
 .carousel__btn--left {
-    left: -3vw;
+    left: -2vw;
 }
 
 .carousel__btn--right {
-    right: -3vw;
+    right: -2vw;
 }
 
 .is-hidden {
     display: none;
 }
 
-// @media (min-width: 900px) {
-//     .carousel {
-//         width: auto;
-//         height: auto;
-//     }
-//     }
-
-@media (min-width: 1200px) {
-    .carousel {
-        width: 500px;
-        height: 500px;
-    }
-    }

@@ -7,19 +7,22 @@
     text-transform: uppercase;
     font-size: calc(var(--font-size)*1.1);
     color: var(--green);
+    font-family: 'Hahmlet';
+    font-weight: 900;
 }
 
 .projects__container {
     text-align: center;
     margin: 0 auto 2vmax;
-    
   
     a {
         color: var(--accent);
         text-decoration: none;
+        text-transform: uppercase;
         display: block;
         margin-bottom: 0.5em;
         font-weight: 500;
+        font-family: 'Lato';
     }
 
     a:hover, a:focus {

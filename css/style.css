@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
 .carousel {
   position: relative;
-  height: 320px;
-  width: 320px;
+  height: 310px;
+  width: 310px;
+  max-width: 100vw;
   margin-bottom: 3vh;
 }
-
 .carousel img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .carousel__track-container {
@@ -47,22 +48,15 @@
 }
 
 .carousel__btn--left {
-  left: -3vw;
+  left: -2vw;
 }
 
 .carousel__btn--right {
-  right: -3vw;
+  right: -2vw;
 }
 
 .is-hidden {
   display: none;
-}
-
-@media (min-width: 1200px) {
-  .carousel {
-    width: 500px;
-    height: 500px;
-  }
 }
 
 /* projects */
@@ -73,21 +67,23 @@
   text-transform: uppercase;
   font-size: calc(var(--font-size)*1.1);
   color: var(--green);
+  font-family: "Hahmlet";
+  font-weight: 900;
 }
 
 .projects__container {
   text-align: center;
   margin: 0 auto 2vmax;
 }
-
 .projects__container a {
   color: var(--accent);
   text-decoration: none;
+  text-transform: uppercase;
   display: block;
   margin-bottom: 0.5em;
   font-weight: 500;
+  font-family: "Lato";
 }
-
 .projects__container a:hover, .projects__container a:focus {
   color: var(--dark);
 }
@@ -109,6 +105,10 @@ p {
 
 body {
   line-height: 1.5;
+}
+
+.secret-passage-main {
+  background-color: pink;
 }
 
 img,
@@ -140,13 +140,13 @@ select {
 
 /* project specific styles */
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: var(--font-size);
   color: var(--green);
 }
 
 h1, h2, h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .container {
@@ -172,7 +172,7 @@ h1, h2, h3 {
 
 .main-title::before,
 .main-title::after {
-  content: '';
+  content: "";
   background-color: var(--accent);
   height: 0.5em;
   width: 0.5em;
@@ -223,11 +223,18 @@ hr {
 }
 
 /* content */
+.content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .header, .content {
   margin-bottom: 1vw;
 }
 
 .content > * {
+  flex-basis: 100%;
   margin-inline: auto;
 }
 
@@ -241,20 +248,17 @@ hr {
 .quote {
   padding: 5vmin;
   text-indent: 2em;
-}
-
-.quote-mark {
   position: relative;
 }
 
 .quote-mark::before {
   content: '"';
-  font-family: 'Catamaran', sans-serif;
+  font-family: "Catamaran", sans-serif;
   font-size: 6em;
   color: var(--green);
   position: absolute;
-  top: -0.5em;
-  left: -0.7em;
+  top: -0.2em;
+  left: -0.1em;
 }
 
 /* footer */
@@ -273,43 +277,76 @@ footer {
   align-items: center;
   background-color: var(--dark);
   border-radius: 5px;
-  width: 7vw;
+  width: 8vmin;
   max-width: 50px;
   margin: 1vmax 2vmax;
   padding: 1vmin;
 }
 
 .footer img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* end footer */
 @media (min-width: 600px) {
   :root {
-    --fontsize: 18px;
+    --font-size: 18px;
   }
 }
+@media (min-width: 600px) {
+  .content {
+    flex-wrap: nowrap;
+  }
 
+  .carousel {
+    width: 28vw;
+    height: 28vw;
+  }
+
+  .carousel__btn {
+    font-size: 3.5em;
+  }
+
+  .carousel__btn--left {
+    left: -3vw;
+  }
+
+  .carousel__btn--right {
+    right: -3vw;
+  }
+}
+@media (min-width: 750px) and (max-height: 1050px) {
+  .carousel__btn {
+    font-size: 4em;
+  }
+}
 @media (min-width: 900px) {
+  .content {
+    flex-wrap: nowrap;
+  }
+
+  .carousel {
+    width: 28vw;
+    height: 28vw;
+  }
+
   :root {
     --font-size: 22px;
   }
-  .content {
-    columns: 3;
-  }
+
   hr {
     border-top: 5px dashed var(--green);
   }
+
   .main-title {
     position: relative;
     right: 45%;
     transform: translateX(50%);
   }
 }
-
 @media (min-width: 1200px) {
   :root {
     --font-size: 25px;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
