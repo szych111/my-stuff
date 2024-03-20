@@ -1,0 +1,33 @@
+:root {
+  --accent: rgb(245, 164, 0);
+  --primary: rgb(236, 5, 52);
+  --semi-primary: rgba(236, 5, 52, .5);
+  // --primary: rgb(245, 55, 92);
+  --green: #012619;
+  --dark: #730202;
+  --red: #a60303;
+  --light: #d9d1c7;
+  --navy: #032340;
+  --blue: #5b89a6;
+  --dark-brown: #590202;
+  --brown: #8c0303;
+  --font-size: 1rem;
+  --transition: 500ms ease-out;
+
+  @media (min-width: 920px) {
+    --font-size: 1.25rem;
+  }
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+// .text-primary {
+//   color: var(--primary);
+// }
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
