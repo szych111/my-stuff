@@ -1,3 +1,7 @@
+const projects = $(".projects");
+console.log(projects);
+projects.slick();
+
 const passionsWrapper = document.querySelector("[data-span=passions]");
 const virtuesWrapper1 = document.querySelector("[data-span=virtues-1]");
 const virtuesWrapper2 = document.querySelector("[data-span=virtues-2]");
@@ -11,7 +15,6 @@ const places = [
 ];
 const future = ["programming-guru", "triathlonist", "gardener"];
 
-console.log(virtuesWrapper1);
 let counter = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -86,4 +89,10 @@ prevBtn.addEventListener("click", (e) => {
 
   moveToSlide(track, currentSlide, prevSlide);
   hideShowArrows(slides, prevBtn, nextBtn, prevIndex);
+});
+
+// --- slick --- //
+
+$(document).ready(function () {
+  $(".projects").slick({});
 });

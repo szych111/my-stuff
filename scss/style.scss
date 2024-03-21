@@ -142,14 +142,14 @@ hr {
 /* content */
 .content {
   margin-block: 3vmin;
+  text-align: center;
 
   .projects {
     display: flex;
     flex-wrap: wrap;
 
     .project-wrapper {
-      aspect-ratio: 16/9;
-      flex-basis: 30%;
+      aspect-ratio: 1/1;
       background-color: var(--accent);
       margin: .5rem;
       cursor: pointer;
@@ -167,7 +167,7 @@ hr {
       display: flex;
 
       &>* {
-        flex-basis: 50%;
+        flex-basis: 33%;
       }
     }
   }
