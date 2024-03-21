@@ -304,6 +304,7 @@ hr {
 .content .projects {
   display: flex;
   flex-wrap: wrap;
+  gap: 1.5rem;
 }
 .content .projects .project-wrapper {
   aspect-ratio: 16/9;
@@ -317,15 +318,10 @@ hr {
 .content .projects .project-wrapper:hover::before, .content .projects .project-wrapper:hover::after, .content .projects .project-wrapper:focus-visible::before, .content .projects .project-wrapper:focus-visible::after {
   transform: scale(0);
 }
-.content .projects .project-number {
-  color: var(--accent);
+.content .projects .project-wrapper::marker {
   font-family: var(--handwirtten);
-  font-size: calc(var(--font-size) * 3);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+  color: var(--accent);
+  margin-bottom: -2rem;
 }
 @media (min-width: 920px) {
   .content .content-wrapper {

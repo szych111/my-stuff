@@ -112,7 +112,7 @@ header {
     p {
       span {
         color: var(--primary);
-        
+
         [data-span] {
           color: var(--accent);
           cursor: pointer;
@@ -151,6 +151,7 @@ hr {
   .projects {
     display: flex;
     flex-wrap: wrap;
+    gap: 1.5rem;
 
     .project-wrapper {
 
@@ -197,17 +198,12 @@ hr {
           //opacity: 0;
         }
       }
-    }
 
-    .project-number {
-      color: var(--accent);
-      font-family: var(--handwirtten);
-      font-size: calc(var(--font-size) * 3);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
+      &::marker {
+        font-family: var(--handwirtten);
+        color: var(--accent);
+        margin-bottom: -2rem;
+      }
     }
   }
 
