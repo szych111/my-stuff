@@ -84,8 +84,6 @@ body,
 /* header */
 
 header {
-  margin-bottom: 2vw;
-
   h1 {
     font-size: calc(var(--font-size) * 1.25);
 
@@ -105,17 +103,18 @@ header {
   }
 
   .main {
-    //width: min(55ch, 100vw);
-    margin-block: 5vmin;
-    //padding-bottom: 5vmin;
+    width: fit-content;
+    margin: 2vmin auto;
+    padding: 1.5em;
     text-align: center;
+    border-bottom: 5px dashed var(--accent);
 
     p {
       span {
-        color: var(--accent);
-
+        color: var(--primary);
+        
         [data-span] {
-          color: var(--primary);
+          color: var(--accent);
           cursor: pointer;
           width: 25ch;
 
@@ -128,10 +127,9 @@ header {
     }
   }
 
-  // @media (min-width: 920px) {
-  //   display: flex;
-  //   gap: 1rem;
-  // }
+  @media (min-width: 920px) {
+    padding: 1.5em 5vh;
+  }
 }
 
 hr {
@@ -143,22 +141,73 @@ hr {
 .content {
   margin-block: 3vmin;
 
+  h2 {
+    text-align: right;
+    color: var(--accent);
+    font-size: calc(var(--font-size) * 3);
+    margin: 5vmax;
+  }
+
   .projects {
     display: flex;
     flex-wrap: wrap;
 
     .project-wrapper {
+
       aspect-ratio: 16/9;
       flex-basis: 30%;
-      background-color: var(--accent);
       margin: .5rem;
       cursor: pointer;
+      transform: scale(1);
       transition: opacity 300ms ease-in;
+      position: relative;
+
+      // &::before {
+      //   transition: all 400ms ease-in;
+      //   position: absolute;
+      //   content: '';
+      //   inset: 0;
+      //   z-index: 1;
+      //   // background-image: 
+      //   //   radial-gradient(var(--accent) 18%, transparent 5%),
+      //   //   radial-gradient(var(--accent) 18%, transparent 5%);
+      //   // background-position: 0px 0px, 12px 12px;
+      //   // background-position: 0px 0px, 0px 0px;
+      //   // background-size: 20px 20px;
+      //   background-color: var(--accent);
+      // }
+
+      // &::after {
+      //   transition: all 500ms ease-out;
+      //   position: absolute;
+      //   content: '';
+      //   inset: 0;
+      //   transform: scale(85%, 85%);
+      //   transform-origin: center;
+      //   z-index: 1;
+      //   background-color: var(--accent);
+      // }
 
       &:hover,
       &:focus-visible {
-        opacity: .6;
+
+        &::before,
+        &::after {
+          transform: scale(0);
+          //opacity: 0;
+        }
       }
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-family: var(--handwirtten);
+      font-size: calc(var(--font-size) * 3);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
     }
   }
 

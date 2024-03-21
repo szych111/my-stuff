@@ -130,6 +130,7 @@ input:focus {
   --accent: rgb(245, 164, 0);
   --primary: rgb(236, 5, 52);
   --semi-primary: rgba(236, 5, 52, .5);
+  --semi-accent: rgba(245, 164, 0, .65);
   --green: #012619;
   --dark: #730202;
   --red: #a60303;
@@ -139,6 +140,7 @@ input:focus {
   --dark-brown: #590202;
   --brown: #8c0303;
   --font-size: 1rem;
+  --handwirtten: "adobe-handwriting-ernie", sans-serif;
   --transition: 500ms ease-out;
 }
 @media (min-width: 920px) {
@@ -153,6 +155,12 @@ input:focus {
 
 .text-capitalize {
   text-transform: capitalize;
+}
+
+.handwriting {
+  font-family: var(--handwirtten);
+  font-weight: 400;
+  font-style: normal;
 }
 
 *,
@@ -237,9 +245,6 @@ body,
 }
 
 /* header */
-header {
-  margin-bottom: 2vw;
-}
 header h1 {
   font-size: calc(var(--font-size) * 1.25);
 }
@@ -256,19 +261,29 @@ header h1 .square:last-of-type {
   margin-left: var(--font-size);
 }
 header .main {
-  margin-block: 5vmin;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 2vmin auto;
+  padding: 1.5em;
   text-align: center;
+  border-bottom: 5px dashed var(--accent);
 }
 header .main p span {
-  color: var(--accent);
+  color: var(--primary);
 }
 header .main p span [data-span] {
-  color: var(--primary);
+  color: var(--accent);
   cursor: pointer;
   width: 25ch;
 }
 header .main p span [data-span]:hover, header .main p span [data-span]:focus-visible {
   opacity: 0.8;
+}
+@media (min-width: 920px) {
+  header {
+    padding: 1.5em 5vh;
+  }
 }
 
 hr {
@@ -280,6 +295,12 @@ hr {
 .content {
   margin-block: 3vmin;
 }
+.content h2 {
+  text-align: right;
+  color: var(--accent);
+  font-size: calc(var(--font-size) * 3);
+  margin: 5vmax;
+}
 .content .projects {
   display: flex;
   flex-wrap: wrap;
@@ -287,13 +308,24 @@ hr {
 .content .projects .project-wrapper {
   aspect-ratio: 16/9;
   flex-basis: 30%;
-  background-color: var(--accent);
   margin: 0.5rem;
   cursor: pointer;
+  transform: scale(1);
   transition: opacity 300ms ease-in;
+  position: relative;
 }
-.content .projects .project-wrapper:hover, .content .projects .project-wrapper:focus-visible {
-  opacity: 0.6;
+.content .projects .project-wrapper:hover::before, .content .projects .project-wrapper:hover::after, .content .projects .project-wrapper:focus-visible::before, .content .projects .project-wrapper:focus-visible::after {
+  transform: scale(0);
+}
+.content .projects .project-number {
+  color: var(--accent);
+  font-family: var(--handwirtten);
+  font-size: calc(var(--font-size) * 3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }
 @media (min-width: 920px) {
   .content .content-wrapper {
