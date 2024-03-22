@@ -53,11 +53,9 @@ h3 {
   font-family: "Lato", sans-serif;
 }
 
-.btn {
+button {
   border: none;
-  border-radius: 2px;
-  padding: 0.2em 1em;
-  text-transform: uppercase;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -144,16 +142,181 @@ hr {
   margin-block: 3vmin;
   text-align: center;
 
+  .selfie-wrapper {
+    display: grid;
+    place-items: center;
+
+    .face {
+      --size: 12rem;
+
+      background-color: white;
+      width: var(--size);
+      height: var(--size);
+      position: relative;
+      border-top: .75rem solid var(--semi-accent);
+
+      &,
+      .bun {
+        border-radius: 50%;
+      }
+
+      .eyes {
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 35%;
+        animation-name: winking;
+        animation-duration: 2500ms;
+        animation-iteration-count: infinite;
+        transition-timing-function: cubic-bezier(0.1, 0.1, 0.8);
+
+        &>* {
+          --size: 1rem;
+          width: var(--size);
+          height: var(--size);
+          background-color: black;
+          border-radius: 50%;
+        }
+      }
+
+      .bun {
+        --gauge: .6;
+        background-color: var(--accent);
+        width: calc(var(--size) * var(--gauge));
+        height: calc(var(--size) * var(--gauge));
+        top: -40%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+
+      .bun,
+      .glasses {
+        position: absolute;
+      }
+
+      .glasses {
+        fill: red;
+        width: 110%;
+        left: -5%;
+        top: -20%;
+        transform-origin: center left;
+        animation-name: falling-glasses;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    @keyframes winking {
+      4%, 15% {
+        transform: scaleY(.3);
+      }
+
+      8%, 25% {
+        transform: scaleY(1);
+      }
+    }
+
+    // @keyframes winking {
+    //   0% {
+    //     transform: scaleY(1);
+    //   }
+
+    //   4% {
+    //     transform: scaleY(.3);
+    //   }
+
+    //   8% {
+    //     transform: scaleY(1);
+    //   }
+
+    //   15% {
+    //     transform: scaleY(.3);
+    //   }
+
+    //   25% {
+    //     transform: scaleY(1);
+    //   }
+    // }
+
+    @keyframes falling-glasses {
+      0% {
+        transform: rotate(0);
+      }
+
+      15% {
+        transform: rotate(95deg);
+      }
+
+      23% {
+        transform: rotate(75deg);
+      }
+
+      28% {
+        transform: rotate(85deg);
+      }
+
+      33% {
+        transform: rotate(80deg);
+      }
+
+      40%, 50% {
+        transform: rotate(90deg);
+      }
+
+      65%, 100% {
+        transform: rotate(0);
+      }
+    }
+  }
+
   .projects {
+    position: relative;
+  }
+
+  .slider__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100000;
+    color: var(--accent);
+
+    svg {
+      stroke-width: 8;
+      width: 4rem;
+      height: 4rem;
+      fill: currentColor;
+    }
+  }
+
+  button.prev {
+    left: -5%;
+  }
+
+  button.next {
+    right: -5%;
+  }
+
+  .projects-slider {
     display: flex;
     flex-wrap: wrap;
+    height: 20rem;
+    max-width: 30vw;
+    overflow: hidden;
 
-    .project-wrapper {
+    .projects-slider__item {
+      --size: 80%;
       aspect-ratio: 1/1;
       background-color: var(--accent);
       margin: .5rem;
       cursor: pointer;
       transition: opacity 300ms ease-in;
+      width: var(--size);
+      //height: var(--size);
 
       &:hover,
       &:focus-visible {
@@ -165,9 +328,11 @@ hr {
   @media (min-width: 920px) {
     .content-wrapper {
       display: flex;
+      gap: 1rem;
 
       &>* {
         flex-basis: 33%;
+        //background-color: pink;
       }
     }
   }

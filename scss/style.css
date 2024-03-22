@@ -130,6 +130,7 @@ input:focus {
   --accent: rgb(245, 164, 0);
   --primary: rgb(236, 5, 52);
   --semi-primary: rgba(236, 5, 52, .5);
+  --semi-accent: rgba(245, 164, 0, .5);
   --green: #012619;
   --dark: #730202;
   --red: #a60303;
@@ -211,11 +212,9 @@ h3 {
   font-family: "Lato", sans-serif;
 }
 
-.btn {
+button {
   border: none;
-  border-radius: 2px;
-  padding: 0.2em 1em;
-  text-transform: uppercase;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -281,23 +280,181 @@ hr {
   margin-block: 3vmin;
   text-align: center;
 }
+.content .selfie-wrapper {
+  display: grid;
+  place-items: center;
+}
+.content .selfie-wrapper .face {
+  --size: 12rem;
+  background-color: white;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  border-top: 0.75rem solid var(--semi-accent);
+}
+.content .selfie-wrapper .face,
+.content .selfie-wrapper .face .bun {
+  border-radius: 50%;
+}
+.content .selfie-wrapper .face .eyes {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  -webkit-animation-name: winking;
+          animation-name: winking;
+  -webkit-animation-duration: 2500ms;
+          animation-duration: 2500ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  transition-timing-function: cubic-bezier(0.1, 0.1, 0.8);
+}
+.content .selfie-wrapper .face .eyes > * {
+  --size: 1rem;
+  width: var(--size);
+  height: var(--size);
+  background-color: black;
+  border-radius: 50%;
+}
+.content .selfie-wrapper .face .bun {
+  --gauge: .6;
+  background-color: var(--accent);
+  width: calc(var(--size) * var(--gauge));
+  height: calc(var(--size) * var(--gauge));
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.content .selfie-wrapper .face .bun,
+.content .selfie-wrapper .face .glasses {
+  position: absolute;
+}
+.content .selfie-wrapper .face .glasses {
+  fill: red;
+  width: 110%;
+  left: -5%;
+  top: -20%;
+  transform-origin: center left;
+  -webkit-animation-name: falling-glasses;
+          animation-name: falling-glasses;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes winking {
+  4%, 15% {
+    transform: scaleY(0.3);
+  }
+  8%, 25% {
+    transform: scaleY(1);
+  }
+}
+@keyframes winking {
+  4%, 15% {
+    transform: scaleY(0.3);
+  }
+  8%, 25% {
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes falling-glasses {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(95deg);
+  }
+  23% {
+    transform: rotate(75deg);
+  }
+  28% {
+    transform: rotate(85deg);
+  }
+  33% {
+    transform: rotate(80deg);
+  }
+  40%, 50% {
+    transform: rotate(90deg);
+  }
+  65%, 100% {
+    transform: rotate(0);
+  }
+}
+@keyframes falling-glasses {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(95deg);
+  }
+  23% {
+    transform: rotate(75deg);
+  }
+  28% {
+    transform: rotate(85deg);
+  }
+  33% {
+    transform: rotate(80deg);
+  }
+  40%, 50% {
+    transform: rotate(90deg);
+  }
+  65%, 100% {
+    transform: rotate(0);
+  }
+}
 .content .projects {
+  position: relative;
+}
+.content .slider__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100000;
+  color: var(--accent);
+}
+.content .slider__button svg {
+  stroke-width: 8;
+  width: 4rem;
+  height: 4rem;
+  fill: currentColor;
+}
+.content button.prev {
+  left: -5%;
+}
+.content button.next {
+  right: -5%;
+}
+.content .projects-slider {
   display: flex;
   flex-wrap: wrap;
+  height: 20rem;
+  max-width: 30vw;
+  overflow: hidden;
 }
-.content .projects .project-wrapper {
+.content .projects-slider .projects-slider__item {
+  --size: 80%;
   aspect-ratio: 1/1;
   background-color: var(--accent);
   margin: 0.5rem;
   cursor: pointer;
   transition: opacity 300ms ease-in;
+  width: var(--size);
 }
-.content .projects .project-wrapper:hover, .content .projects .project-wrapper:focus-visible {
+.content .projects-slider .projects-slider__item:hover, .content .projects-slider .projects-slider__item:focus-visible {
   opacity: 0.6;
 }
 @media (min-width: 920px) {
   .content .content-wrapper {
     display: flex;
+    gap: 1rem;
   }
   .content .content-wrapper > * {
     flex-basis: 33%;
