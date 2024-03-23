@@ -127,10 +127,11 @@ input:focus {
 }
 
 :root {
-  --accent: rgb(245, 164, 0);
+  --accent: #f5a400;
   --primary: rgb(236, 5, 52);
   --semi-primary: rgba(236, 5, 52, .5);
   --semi-accent: rgba(245, 164, 0, .65);
+  --semi-accent: rgba(245, 164, 0, .5);
   --green: #012619;
   --dark: #730202;
   --red: #a60303;
@@ -142,6 +143,7 @@ input:focus {
   --font-size: 1rem;
   --handwirtten: "adobe-handwriting-ernie", sans-serif;
   --transition: 500ms ease-out;
+  --handwritten: adobe-handwriting-ernie, sans-serif;
 }
 @media (min-width: 920px) {
   :root {
@@ -163,6 +165,77 @@ input:focus {
   font-style: normal;
 }
 
+.handwritten {
+  font-family: adobe-handwriting-ernie, sans-serif;
+}
+
+.display-none {
+  display: none;
+}
+
+@-webkit-keyframes winking {
+  4%, 15% {
+    transform: scaleY(0.3);
+  }
+  8%, 25% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes winking {
+  4%, 15% {
+    transform: scaleY(0.3);
+  }
+  8%, 25% {
+    transform: scaleY(1);
+  }
+}
+@-webkit-keyframes falling-glasses {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(95deg);
+  }
+  23% {
+    transform: rotate(75deg);
+  }
+  28% {
+    transform: rotate(92deg);
+  }
+  33% {
+    transform: rotate(80deg);
+  }
+  40%, 50% {
+    transform: rotate(90deg);
+  }
+  65%, 100% {
+    transform: rotate(0);
+  }
+}
+@keyframes falling-glasses {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(95deg);
+  }
+  23% {
+    transform: rotate(75deg);
+  }
+  28% {
+    transform: rotate(92deg);
+  }
+  33% {
+    transform: rotate(80deg);
+  }
+  40%, 50% {
+    transform: rotate(90deg);
+  }
+  65%, 100% {
+    transform: rotate(0);
+  }
+}
 *,
 *::before,
 *::after {
@@ -205,6 +278,11 @@ select,
   font: inherit;
 }
 
+a:hover,
+a:focus-visible {
+  opacity: 0.8;
+}
+
 /* project specific styles */
 body {
   font-family: "Playfair Display", serif;
@@ -213,17 +291,13 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   font-family: "Lato", sans-serif;
 }
 
-.btn {
+button {
   border: none;
-  border-radius: 2px;
-  padding: 0.2em 1em;
-  text-transform: uppercase;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -280,55 +354,128 @@ header .main p span [data-span] {
 header .main p span [data-span]:hover, header .main p span [data-span]:focus-visible {
   opacity: 0.8;
 }
+header .main p [data-span=nonsense] {
+  font-family: adobe-handwriting-ernie, sans-serif;
+  color: var(--primary);
+}
 @media (min-width: 920px) {
   header {
     padding: 1.5em 5vh;
   }
 }
 
-hr {
-  width: min(95%, 50rem);
-  border: 3px dashed var(--accent);
-}
-
 /* content */
 .content {
   margin-block: 3vmin;
 }
-.content h2 {
-  text-align: right;
+.content .content-wrapper h2 {
+  font-family: var(--handwritten);
+  font-size: calc(var(--font-size) * 1.5);
   color: var(--accent);
-  font-size: calc(var(--font-size) * 3);
-  margin: 5vmax;
+  position: relative;
+  z-index: 2;
 }
-.content .projects {
+.content .content-wrapper .selfie-wrapper {
+  display: grid;
+  place-items: center;
+}
+.content .content-wrapper .selfie-wrapper .face {
+  --size: 12rem;
+  background-color: white;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  border-top: 0.75rem solid var(--semi-accent);
+}
+.content .content-wrapper .selfie-wrapper .face,
+.content .content-wrapper .selfie-wrapper .face .bun {
+  border-radius: 50%;
+}
+.content .content-wrapper .selfie-wrapper .face .eyes {
+  display: flex;
+  justify-content: center;
+  gap: 5.5rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  -webkit-animation-name: winking;
+          animation-name: winking;
+  -webkit-animation-duration: 2500ms;
+          animation-duration: 2500ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  transition-timing-function: cubic-bezier(0.1, 0.1, 0.8);
+}
+.content .content-wrapper .selfie-wrapper .face .eyes > * {
+  --size: 1rem;
+  width: var(--size);
+  height: var(--size);
+  background-color: black;
+  border-radius: 50%;
+}
+.content .content-wrapper .selfie-wrapper .face .bun {
+  --gauge: .6;
+  background-color: var(--accent);
+  width: calc(var(--size) * var(--gauge));
+  height: calc(var(--size) * var(--gauge));
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.content .content-wrapper .selfie-wrapper .face .bun,
+.content .content-wrapper .selfie-wrapper .face .glasses {
+  position: absolute;
+}
+.content .content-wrapper .selfie-wrapper .face .glasses {
+  fill: var(--primary);
+  width: 110%;
+  left: -5%;
+  top: -20%;
+  transform-origin: center left;
+  -webkit-animation-name: falling-glasses;
+          animation-name: falling-glasses;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.content .content-wrapper .projects-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
 }
-.content .projects .project-wrapper {
+.content .content-wrapper .project-wrapper {
   aspect-ratio: 16/9;
-  flex-basis: 30%;
+  flex-basis: 45%;
   margin: 0.5rem;
   cursor: pointer;
   transform: scale(1);
   transition: opacity 300ms ease-in;
   position: relative;
 }
-.content .projects .project-wrapper:hover::before, .content .projects .project-wrapper:hover::after, .content .projects .project-wrapper:focus-visible::before, .content .projects .project-wrapper:focus-visible::after {
+.content .content-wrapper .project-wrapper:hover::before, .content .content-wrapper .project-wrapper:hover::after, .content .content-wrapper .project-wrapper:focus-visible::before, .content .content-wrapper .project-wrapper:focus-visible::after {
   transform: scale(0);
 }
-.content .projects .project-wrapper::marker {
-  font-family: var(--handwirtten);
-  color: var(--accent);
-  margin-bottom: -2rem;
-}
-@media (min-width: 920px) {
+@media (min-width: 992px) {
   .content .content-wrapper {
     display: flex;
+    justify-content: space-evenly;
   }
-  .content .content-wrapper > * {
+  .content .content-wrapper .projects {
     flex-basis: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+  .content .content-wrapper .projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .content .content-wrapper .projects-wrapper > * {
+    flex-basis: 30%;
   }
 }
 
