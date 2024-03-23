@@ -38,6 +38,12 @@ select,
   font: inherit;
 }
 
+
+a:hover,
+a:focus-visible {
+  opacity: .8;
+}
+
 /* project specific styles */
 
 body {
@@ -47,9 +53,7 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   font-family: "Lato", sans-serif;
 }
 
@@ -123,13 +127,13 @@ header {
           }
         }
       }
+
+      [data-span=nonsense] {
+        font-family: adobe-handwriting-ernie, sans-serif;
+        color: var(--primary);
+      }
     }
   }
-
-  // @media (min-width: 920px) {
-  //   display: flex;
-  //   gap: 1rem;
-  // }
 }
 
 hr {
@@ -140,7 +144,13 @@ hr {
 /* content */
 .content {
   margin-block: 3vmin;
-  text-align: center;
+  //text-align: center;
+
+  h2 {
+    font-family: var(--handwritten);
+    font-size: calc(var(--font-size) * 1.5);
+    color: var(--accent);
+  }
 
   .selfie-wrapper {
     display: grid;
@@ -163,7 +173,7 @@ hr {
       .eyes {
         display: flex;
         justify-content: center;
-        gap: 5rem;
+        gap: 5.5rem;
         position: absolute;
         left: 0;
         right: 0;
@@ -199,7 +209,7 @@ hr {
       }
 
       .glasses {
-        fill: red;
+        fill: var(--primary);
         width: 110%;
         left: -5%;
         top: -20%;
@@ -208,119 +218,6 @@ hr {
         animation-duration: 5s;
         animation-iteration-count: infinite;
         animation-fill-mode: forwards;
-      }
-    }
-
-    @keyframes winking {
-      4%, 15% {
-        transform: scaleY(.3);
-      }
-
-      8%, 25% {
-        transform: scaleY(1);
-      }
-    }
-
-    // @keyframes winking {
-    //   0% {
-    //     transform: scaleY(1);
-    //   }
-
-    //   4% {
-    //     transform: scaleY(.3);
-    //   }
-
-    //   8% {
-    //     transform: scaleY(1);
-    //   }
-
-    //   15% {
-    //     transform: scaleY(.3);
-    //   }
-
-    //   25% {
-    //     transform: scaleY(1);
-    //   }
-    // }
-
-    @keyframes falling-glasses {
-      0% {
-        transform: rotate(0);
-      }
-
-      15% {
-        transform: rotate(95deg);
-      }
-
-      23% {
-        transform: rotate(75deg);
-      }
-
-      28% {
-        transform: rotate(85deg);
-      }
-
-      33% {
-        transform: rotate(80deg);
-      }
-
-      40%, 50% {
-        transform: rotate(90deg);
-      }
-
-      65%, 100% {
-        transform: rotate(0);
-      }
-    }
-  }
-
-  .projects {
-    position: relative;
-  }
-
-  .slider__button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100000;
-    color: var(--accent);
-
-    svg {
-      stroke-width: 8;
-      width: 4rem;
-      height: 4rem;
-      fill: currentColor;
-    }
-  }
-
-  button.prev {
-    left: -5%;
-  }
-
-  button.next {
-    right: -5%;
-  }
-
-  .projects-slider {
-    display: flex;
-    flex-wrap: wrap;
-    height: 20rem;
-    max-width: 30vw;
-    overflow: hidden;
-
-    .projects-slider__item {
-      --size: 80%;
-      aspect-ratio: 1/1;
-      background-color: var(--accent);
-      margin: .5rem;
-      cursor: pointer;
-      transition: opacity 300ms ease-in;
-      width: var(--size);
-      //height: var(--size);
-
-      &:hover,
-      &:focus-visible {
-        opacity: .6;
       }
     }
   }
@@ -333,6 +230,17 @@ hr {
       &>* {
         flex-basis: 33%;
         //background-color: pink;
+      }
+
+      .projects-list {
+        text-align: left;
+
+        a {
+          line-height: 2;
+          color: black;
+          text-decoration: underline dashed var(--accent) 3px;
+          text-underline-offset: 7px;
+        }
       }
     }
   }
