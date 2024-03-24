@@ -41,7 +41,8 @@ select,
 
 a:hover,
 a:focus-visible {
-  opacity: .8;
+  //opacity: .8;
+  transform: scale(1.1);
 }
 
 /* project specific styles */
@@ -122,14 +123,15 @@ header {
 
           &:hover,
           &:focus-visible {
-            opacity: .8;
+            //opacity: .8;
+            transform: scale(1.1);
           }
         }
       }
 
       [data-span=nonsense] {
         font-family: adobe-handwriting-ernie, sans-serif;
-        color: var(--primary);
+        color: var(--accent);
       }
     }
   }
@@ -152,7 +154,7 @@ header {
   .content-wrapper {
     h2 {
       font-family: var(--handwritten);
-      font-size: calc(var(--font-size) * 1.5);
+      font-size: calc(var(--font-size) * 1.75);
       color: var(--accent);
       position: relative;
       z-index: 2;
@@ -221,7 +223,7 @@ header {
           top: -20%;
           transform-origin: center left;
           animation-name: falling-glasses;
-          animation-duration: 5s;
+          animation-duration: 6s;
           animation-iteration-count: infinite;
           animation-fill-mode: forwards;
         }
@@ -270,6 +272,7 @@ header {
 
       &:hover,
       &:focus-visible {
+        transform: scale(1.3);
 
         &::before,
         &::after {
