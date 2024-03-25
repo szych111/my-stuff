@@ -360,11 +360,12 @@ header .main p span {
 }
 header .main p span [data-span] {
   color: var(--accent);
+  transition: color 300ms ease-in;
   cursor: pointer;
   width: 25ch;
 }
 header .main p span [data-span]:hover, header .main p span [data-span]:focus-visible {
-  transform: scale(1.1);
+  color: var(--primary);
 }
 header .main p [data-span=nonsense] {
   font-family: adobe-handwriting-ernie, sans-serif;
@@ -463,16 +464,16 @@ header .main p [data-span=nonsense] {
   aspect-ratio: 16/9;
   flex-basis: 45%;
   margin: 0.5rem;
-  cursor: pointer;
-  transform: scale(1);
-  transition: opacity 300ms ease-in;
+  opacity: 0.8;
+  transition: opacity 250ms ease-in;
   position: relative;
 }
-.content .content-wrapper .project-wrapper:hover, .content .content-wrapper .project-wrapper:focus-visible {
-  transform: scale(1.3);
+.content .content-wrapper .project-wrapper.link:focus-visible, .content .content-wrapper .project-wrapper.link:hover {
+  opacity: 1;
+  cursor: pointer;
 }
-.content .content-wrapper .project-wrapper:hover::before, .content .content-wrapper .project-wrapper:hover::after, .content .content-wrapper .project-wrapper:focus-visible::before, .content .content-wrapper .project-wrapper:focus-visible::after {
-  transform: scale(0);
+.content .content-wrapper .project-wrapper.link:visited {
+  border: 1px solid var(--accent);
 }
 @media (min-width: 992px) {
   .content .content-wrapper {
