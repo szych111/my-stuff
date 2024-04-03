@@ -27,7 +27,13 @@ p {
 img,
 picture {
   max-width: 100%;
-  display: block;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  color: var(--dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: .75rem;
 }
 
 input,
@@ -50,7 +56,6 @@ a:focus-visible {
 body {
   font-family: "Playfair Display", serif;
   font-size: var(--font-size);
-  color: var(--green);
   min-height: 100vh;
 }
 

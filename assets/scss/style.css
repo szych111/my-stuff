@@ -129,11 +129,11 @@ input:focus {
 :root {
   --accent: #f5a400;
   --primary: rgb(236, 5, 52);
+  --dark: rgb(0, 0, 0);
   --semi-primary: rgba(236, 5, 52, .5);
   --semi-accent: rgba(245, 164, 0, .65);
   --semi-accent: rgba(245, 164, 0, .5);
   --green: #012619;
-  --dark: #730202;
   --red: #a60303;
   --light: #d9d1c7;
   --navy: #032340;
@@ -271,7 +271,13 @@ p {
 img,
 picture {
   max-width: 100%;
-  display: block;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  color: var(--dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
 }
 
 *::-moz-placeholder {
@@ -299,7 +305,6 @@ a:focus-visible {
 body {
   font-family: "Playfair Display", serif;
   font-size: var(--font-size);
-  color: var(--green);
   min-height: 100vh;
 }
 
